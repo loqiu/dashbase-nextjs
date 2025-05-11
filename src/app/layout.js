@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import {inter, lusitana} from '@/app/ui/fonts'
+import Image from 'next/image'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,9 +22,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={'${inter.className} antialiased'}
       >
         {children}
+        <p className={`${lusitana.className} text-xl text-gray-200 md:text-3xl md:leading-normal`}> p-test </p>
+          <Image src="/globe.svg"
+                 width={1000}
+                 height={760}
+                 className="hidden md:block"
+                 alt="dashborad project showing desktop version"/>
       </body>
     </html>
   );
